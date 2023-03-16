@@ -7,8 +7,8 @@ class Post < ApplicationRecord
     validates :category, inclusion: { in: ["Fiction", "Non-Fiction"] }
 
     def title_is_clickbait
-       unless title.match?()
-      errors.add(:title, "must be sufficiently clickbait-y")
-       end
+      unless title.match?(/(secret)|(won't believe)|(top \d)/i)
+        errors.add(:title, "Title must be clickbait")
+      end
     end
 end
