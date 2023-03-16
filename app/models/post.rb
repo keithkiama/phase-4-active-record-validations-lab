@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
     def title_is_clickbait
       unless title.match?(/(secret)|(won't believe)|(top \d)/i)
-        errors.add(:title, "Title must be clickbait")
+        errors.add(:title, "Title must sound like clickbait")
       end
     end
 end
